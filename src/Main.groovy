@@ -1,6 +1,5 @@
 static void main(String[] args) {
-
-    if (args.length < 2 ) {
+    if (args.length < 2) {
         println "Please provide the input and output file."
         System.exit(1)
     }
@@ -8,5 +7,4 @@ static void main(String[] args) {
     def outputFile = new File(args[1])
     MultiplesEngine.getRawDataFileForProcessing(inputFile, outputFile)
     //MultiplesEngineTest.runTest() for testing purposes
-
 }
