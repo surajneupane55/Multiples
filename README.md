@@ -31,19 +31,23 @@ _This system will have the following capabilities._
 
 1. Clone the repository
 
-2. Goto the directory:
-   `cd src`  *Everything will be run from the src directory
+2. Goto the `src` directory:
+   Everything will be run from the `src` directory
 
 3. Install the groovy in your system:
    macOS: `brew install groovy`
+   Must be `v4` or later 
 
 4. Compile the code
    `groovyc Main.groovy`
 
 5. Run the code:
    Example:
-   `groovy -cp . Main sunshineTestFiles/input0.txt outputTestFiles/output0.txt`
-
+   1. Providing the folder for output file:
+      `groovy -cp . Main sunshineTestFiles/input0.txt outputTestFiles/output0.txt`
+   2. Giving output file without destination directory, stills saves in outputTestFiles folder:
+      `groovy -cp . Main sunshineTestFiles/input0.txt outputFileOfMyDesire.txt`
+      
 6. Check the output file in the `outputTestFiles` folder, you can always alter the value of `input0.txt`
    file to test the code with different inputs parameters.
 
