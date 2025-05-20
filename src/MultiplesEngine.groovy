@@ -57,7 +57,7 @@ class MultiplesEngine {
         inputListOfIntegers.every { it ->
             assert it[0..-2].every { value ->
                 value < it.last()
-            }, "Input file target value should be greater than factorial."
+            }, "Input file target value [C] should be greater than numbers[A B] in [A B C]."
         }
     }
 
