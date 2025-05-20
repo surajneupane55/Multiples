@@ -25,7 +25,7 @@ _This system will have the following capabilities._
 4. And the system throws an error if the file does not match the expected structure
 5. And the system processes the file if it matches the expected structure
 6. And the system returns the result of processed file as output in console logs
-7. And the system prints the result in the output file in output folder**
+7. And the system prints the result in the output file in output folder
 
 ** HOW TO RUN THE CODE **
 
