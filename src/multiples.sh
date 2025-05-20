@@ -1,27 +1,16 @@
 !/bin/bash
 
 if [ "$#" -ne 2 ]; then
-    echo "Usages: $0 inputFile.txt outputFile.txt, where outputFile is string file name to be created"
+    echo "Usages: $0 inputFile.txt outputFile.txt, where outputFile is file name to be created in outputTestFiles folder"
     exit 1
 fi
 
 inputFile=$1
 outputFile=$2
 
-if [ -e "$inputFile" ]; then
-    echo "Input file exists"
-else
-    echo "Input file does not exist"
-    exit 1
-fi
+[ -e "$inputFile" ] || { echo "Input file doesn't exist"; exit 1; }
+[ -e "$outputFile" ] || { echo "Input file doesn't exist"; exit 1; }
 
-if [ -e "$outputFile" ]; then
-    echo "Output file exists"
-else
-    echo "Output file does not exist"
-    exit 1
-fi
+echo "Input and outputFile exists"
 
-
-
-#groovy MultiplesEngine.groovy input0.txt output0.txt
+groovy MultiplesEngine.groovy input0.txt output0.txt

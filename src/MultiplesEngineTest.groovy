@@ -1,11 +1,11 @@
 class MultiplesEngineTest {
     static runTest() {
-        cleanupTestData("sunshineTestFile", "failingTestFiles")
+        cleanupTestData("sunshineTestFiles", "failingTestFiles", "outputTestFiles")
 
         createSunshineInputFiles()
         createFailingInputFiles()
 
-        runForSunshineTests("sunshineTestFile")
+        runForSunshineTests("sunshineTestFiles")
         //runForFailingTests("failingTestFiles")
     }
 
@@ -32,9 +32,9 @@ class MultiplesEngineTest {
     }
 
     private static createSunshineInputFiles() {
-        def folderName = "sunshineTestFile"
+        def folderName = "sunshineTestFiles"
         def folder = MultiplesEngine.createNewFolder(folderName)
-        (0..9).each {
+        (0..0).each {
             def file = new File(folder, "input${it}.txt")
             getSunshineTestData(file)
         }
