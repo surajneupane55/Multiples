@@ -1,18 +1,17 @@
-
-
 **User Story**
 
-_As a user I should be able to input the file as first argument. 
-The file should contain 3 numbers per row seperated by space. 
+_As a user I should be able to input the file as first argument.
+The file should contain 3 numbers per row seperated by space.
 There can be any number of rows in a file.
 The A and B are the first two numbers in a row simultaneously.
 The third number is a goal number.
 The system should find all the multiples of number A and B below the goal number in ascending order.
-The system should print the output and also write it to the target output file._ 
+The system should print the output and also write it to the target output file._
 
 **Test Discovery**
 
 _This system will have the following capabilities._
+
 1. Reject files that do not match the expected structure.
 2. Handle errors gracefully.
 3. Log the processing of files.
@@ -28,24 +27,33 @@ _This system will have the following capabilities._
 6. And the system returns the result of processed file as output in console logs
 7. And the system prints the result in the output file in output folder**
 
-
 ** HOW TO RUN THE CODE **
 
 1. Clone the repository
 
 2. Goto the directory:
-   cd src  *Everything will be run from the src directory
+   `cd src`  *Everything will be run from the src directory
 
 3. Install the groovy in your system:
-   macOS: brew install groovy
+   macOS: `brew install groovy`
 
 4. Compile the code
-   groovyc Main.groovy
+   `groovyc Main.groovy`
 
 5. Run the code:
    Example:
-   groovy -cp . Main sunshineTestFiles/input0.txt outputTestFiles/output0.txt
+   `groovy -cp . Main sunshineTestFiles/input0.txt outputTestFiles/output0.txt`
 
-6. Check the output file in the outputTestFiles folder, you can always alter the value of input0 
-   file to test the code with different inputs.
+6. Check the output file in the `outputTestFiles` folder, you can always alter the value of `input0.txt`
+   file to test the code with different inputs parameters.
+
+Note: Some edge cases:
+
+Input file params:  `1 1 2`
+Output file: `2: 1` Reason: `unique()` is used
+
+Input file params: `2 8 16`
+Output file: `16: 2 4 6 8 10 12 14` Reason: `sort()` is used so the result will not be `16: 2 8 4 6 10 12 14` if that is expected.
+
+
 
