@@ -1,4 +1,6 @@
 class MultiplesEngine {
+    private static final String OUTPUT_DIR = "outputTestFiles"
+
 
     static void getRawDataFileForProcessing(File inputFile, File outputFile) {
         validateFiles(inputFile, outputFile)
@@ -16,7 +18,7 @@ class MultiplesEngine {
     }
 
     private static void appendResultToOutputFile(String result, File outputFile) {
-        def targetFile = new File("outputTestFiles", outputFile.getName())
+        def targetFile = new File(OUTPUT_DIR, outputFile.getName())
         targetFile.append result + "\n"
     }
 
@@ -67,7 +69,7 @@ class MultiplesEngine {
         if (outputFile.exists()) {
             outputFile.delete()
         } else {
-            def outboundFolder = createNewFolder("outputTestFiles")
+            def outboundFolder = createNewFolder(OUTPUT_DIR)
             def targetFile = new File(outboundFolder, outputFile.getName())
             if (!targetFile.exists()) {
                 targetFile.createNewFile()
@@ -83,7 +85,9 @@ class MultiplesEngine {
 
     static File createNewFolder(String folderName) {
         def folder = new File(folderName)
-        folder.exists() ? folder.delete() : folder.mkdir()
+        if (!folder.exists()) {
+            folder.mkdir()
+        }
         folder
     }
 }
