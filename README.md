@@ -36,7 +36,7 @@ _This system will have the following capabilities._
 
 3. Install the groovy in your system:
    macOS: `brew install groovy`
-   Must be `v4` or later 
+   Groovy version must be `v4.0.0` or later 
 
 4. Compile the code
    `groovyc Main.groovy`
@@ -47,7 +47,7 @@ _This system will have the following capabilities._
       `groovy -cp . Main sunshineTestFiles/input0.txt outputTestFiles/output0.txt`
    2. Giving output file without destination directory, stills saves in outputTestFiles folder:
       `groovy -cp . Main sunshineTestFiles/input0.txt outputFileOfMyDesire.txt`
-      
+
 6. Check the output file in the `outputTestFiles` folder, you can always alter the value of `input0.txt`
    file to test the code with different inputs parameters.
 
