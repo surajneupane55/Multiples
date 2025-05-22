@@ -11,7 +11,7 @@ class MultiplesEngine {
 
     private static void writeToOutputFile(Map mapMultiples, File outputFile) {
         mapMultiples.each { key, value ->
-            def expectedFormat = "$key: ${value.join(' ')}"
+            def expectedFormat = "$key:${value.join(' ')}"
             println expectedFormat
             appendResultToOutputFile expectedFormat, outputFile
         }
@@ -38,7 +38,7 @@ class MultiplesEngine {
             def values = (numAMultiple + numBMultiple).unique().sort().findAll {
                 it != key
             }
-            collectionOfMultiple.putLast key, values
+            collectionOfMultiple[key] = values
         }
         collectionOfMultiple.sort { a, b ->
             a.key <=> b.key
@@ -66,14 +66,12 @@ class MultiplesEngine {
     private static void validateFiles(File inputFile, File outputFile) {
         assert inputFile.exists() && inputFile.canRead(),
                 "Input file does not exist or is not readable."
-        if (outputFile.exists()) {
-            outputFile.delete()
+        def targetFile = new File(OUTPUT_DIR, outputFile.getName())
+        if (targetFile.exists()) {
+            targetFile.delete()
         } else {
             def outboundFolder = createNewFolder(OUTPUT_DIR)
-            def targetFile = new File(outboundFolder, outputFile.getName())
-            if (!targetFile.exists()) {
-                targetFile.createNewFile()
-            }
+            targetFile.createNewFile()
         }
     }
 
